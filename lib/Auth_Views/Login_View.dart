@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: _isLoading
                   ? Center(
                       child: SpinKitFadingCube(
-                        size: 50.0,
+                        size: size.height * 0.1,
                         color: btnColor,
                       ),
                     )
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'Log in',
                                 style: TxtStls.titlestyle,
                               ),
-                              SizedBox(height: 40.0),
+                              SizedBox(height: size.height * 0.01),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -98,9 +98,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       }),
                                 ],
                               ),
-                              SizedBox(height: 20.0),
+                              SizedBox(height: size.height * 0.01),
                               Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 140),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: size.width * 0.05),
                                 child: Row(
                                   children: [
                                     Expanded(
@@ -125,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 20.0),
+                              SizedBox(height: size.height * 0.01),
                               Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: size.width * 0.075),
@@ -163,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 10.0),
+                                    SizedBox(height: size.height * 0.01),
                                     Text("Password",
                                         style: TxtStls.fieldtitlestyle),
                                     Container(
@@ -202,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 10.0),
+                                    SizedBox(height: size.height * 0.01),
                                     Row(
                                       children: [
                                         Checkbox(
@@ -221,7 +222,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           "Remember me",
                                           style: TxtStls.fieldstyle,
                                         ),
-                                        SizedBox(width: 120),
+                                        SizedBox(width: size.width * 0.04),
                                         InkWell(
                                           child: Text("Reset Password?",
                                               style: TxtStls.btnstyle),
@@ -235,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         )
                                       ],
                                     ),
-                                    SizedBox(height: 15.0),
+                                    SizedBox(height: size.height * 0.01),
                                     InkWell(
                                       child: Container(
                                         padding: EdgeInsets.all(12.0),
@@ -254,7 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             _passwordController);
                                       },
                                     ),
-                                    SizedBox(height: 15.0),
+                                    SizedBox(height: size.height * 0.01),
                                     Align(
                                       alignment: Alignment.center,
                                       child: RichText(

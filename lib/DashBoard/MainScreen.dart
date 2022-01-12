@@ -72,15 +72,15 @@ class _MainScreenState extends State<MainScreen> {
   Widget SideDrawer(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Drawer(
-      elevation: 0.9,
+      elevation: 1,
       child: ListView(
         shrinkWrap: true,
         children: [
           Container(
-            alignment: Alignment.center,
-            height: 130,
-            child: Image.asset("assets/Logos/Ologo.png"),
-          ),
+              alignment: Alignment.center,
+              height: size.height * 0.2,
+              child: Image.asset("assets/Logos/Ologo.png",
+                  fit: BoxFit.contain, filterQuality: FilterQuality.high)),
           DrawerListTile(
               "DashBoard", "assets/Notations/Category.png", Tabs.DashBoard),
           DrawerListTile(
@@ -100,11 +100,12 @@ class _MainScreenState extends State<MainScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: SizedBox(
-              height: 260,
-              width: 50,
+              height: size.height * 0.2,
+              width: size.width * 0.1,
               child: Image.asset(
                 "assets/Logos/lamp.png",
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
+                filterQuality: FilterQuality.high,
               ),
             ),
           ),
@@ -138,12 +139,10 @@ class _MainScreenState extends State<MainScreen> {
                   title: username == null
                       ? Text("")
                       : Text(username!, style: TxtStls.fieldstyle),
-                  trailing: IconButton(
-                      onPressed: () async {},
-                      icon: Icon(
-                        Icons.settings,
-                        color: btnColor,
-                      )),
+                  trailing: Icon(
+                    Icons.settings,
+                    color: btnColor,
+                  ),
                 );
               },
             ),
@@ -191,6 +190,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   DrawerListTile(title, image, tab) {
+    Size size = MediaQuery.of(context).size;
     return ListTile(
       hoverColor: btnColor.withOpacity(0.25),
       title: Responsive.isMediumScreen(context)
@@ -199,7 +199,7 @@ class _MainScreenState extends State<MainScreen> {
       leading: SizedBox(
         child: Image.asset(image,
             fit: BoxFit.fill, filterQuality: FilterQuality.high),
-        height: 22.5,
+        height: size.height * 0.03,
       ),
       onTap: () {
         setState(() {

@@ -244,13 +244,9 @@ class _TaskPreviewState extends State<TaskPreview>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                child: Container(
-                  color: bgColor,
-                  width: size.width * 0.1345,
-                  child: Row(
-                    children: _list.map((e) => newMethod(e, () {})).toList(),
-                  ),
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                child: Row(
+                  children: _list.map((e) => newMethod(e, () {})).toList(),
                 ),
               ),
               Row(
@@ -564,7 +560,7 @@ class _TaskPreviewState extends State<TaskPreview>
                     topLeft: Radius.circular(10.0),
                     bottomRight: Radius.circular(10.0))),
             child: Container(
-              width: size.width * 0.07,
+              width: size.width * 0.1,
               height: size.height * 0.05,
               decoration: BoxDecoration(
                 color: clr,
@@ -840,8 +836,8 @@ class _TaskPreviewState extends State<TaskPreview>
                           return Container(
                             padding: EdgeInsets.symmetric(
                                 vertical: 5, horizontal: 10.0),
-                            width: size.width * 0.125,
-                            height: size.height * 0.2,
+                            width: size.width * 0.2,
+                            height: size.height * 0.25,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -4551,6 +4547,9 @@ class _TaskPreviewState extends State<TaskPreview>
                                   },
                                 ),
                                 Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Container(
                                       width: 150,
@@ -4567,7 +4566,6 @@ class _TaskPreviewState extends State<TaskPreview>
                                         style: TxtStls.fieldstyle1,
                                       ),
                                     ),
-                                    SizedBox(height: 3),
                                     dropdowns1(id, cat, newsta, prosta, insta,
                                         wonsta, clsta),
                                   ],
@@ -4621,7 +4619,7 @@ class _TaskPreviewState extends State<TaskPreview>
                             child: Row(
                               children: [
                                 Expanded(
-                                  flex: 3,
+                                  flex: 4,
                                   child: Text(
                                     "Intial Message : " + createDate,
                                     style: TxtStls.fieldstyle,
@@ -6105,7 +6103,7 @@ class _TaskPreviewState extends State<TaskPreview>
             color: bgColor,
           ),
           width: size.width,
-          height: _tapslist[0] ? size.height * 0.31 : size.height * 0.08,
+          height: _tapslist[0] ? size.height * 0.33 : size.height * 0.09,
           child: Column(
             children: [
               listtitle(_clrslist[0], "NEW", _tapslist[0], () {
@@ -6133,7 +6131,7 @@ class _TaskPreviewState extends State<TaskPreview>
             color: bgColor,
           ),
           width: size.width,
-          height: _tapslist[1] ? size.height * 0.31 : size.height * 0.08,
+          height: _tapslist[1] ? size.height * 0.33 : size.height * 0.09,
           child: Column(
             children: [
               listtitle(_clrslist[1], "PROSPECT", _tapslist[1], () {
@@ -6161,7 +6159,7 @@ class _TaskPreviewState extends State<TaskPreview>
             color: bgColor,
           ),
           width: size.width,
-          height: _tapslist[2] ? size.height * 0.31 : size.height * 0.08,
+          height: _tapslist[2] ? size.height * 0.33 : size.height * 0.09,
           child: Column(
             children: [
               listtitle(_clrslist[2], "IN PROGRESS", _tapslist[2], () {
@@ -6189,7 +6187,7 @@ class _TaskPreviewState extends State<TaskPreview>
             color: bgColor,
           ),
           width: size.width,
-          height: _tapslist[3] ? size.height * 0.31 : size.height * 0.08,
+          height: _tapslist[3] ? size.height * 0.33 : size.height * 0.09,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -6218,7 +6216,7 @@ class _TaskPreviewState extends State<TaskPreview>
             color: bgColor,
           ),
           width: size.width,
-          height: _tapslist[4] ? size.height * 0.31 : size.height * 0.08,
+          height: _tapslist[4] ? size.height * 0.33 : size.height * 0.09,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
