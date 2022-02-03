@@ -437,7 +437,7 @@ class _UserDashBoardState extends State<UserDashBoard> {
                     children: [
                       Container(
                         padding: EdgeInsets.symmetric(
-                            horizontal: 16.0, vertical: 8.0),
+                            horizontal: size.width*0.01, vertical: 1),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -484,7 +484,7 @@ class _UserDashBoardState extends State<UserDashBoard> {
                       Container(
                         height: size.height * 0.23,
                         padding: EdgeInsets.symmetric(
-                            horizontal: 16.0, vertical: 8.0),
+                            horizontal: size.width*0.01, vertical: size.height*0),
                         child: StreamBuilder(
                           stream: FirebaseFirestore.instance
                               .collection("Tasks")

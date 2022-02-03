@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: _isLoading
                   ? Center(
                       child: SpinKitFadingCube(
-                        size: size.height * 0.1,
+                        size: size.height * 0.05,
                         color: btnColor,
                       ),
                     )
@@ -312,6 +311,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _emailController,
     _passwordController,
   ) async {
+    Size size = MediaQuery.of(context).size;
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     if (_formKey.currentState!.validate()) {
@@ -330,7 +330,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             dismissDirection: DismissDirection.startToEnd,
             content: Expanded(child: Text("Log in Successfully")),
-            padding: EdgeInsets.symmetric(horizontal: 800, vertical: 15),
+            padding: EdgeInsets.symmetric(horizontal: size.width*0.3, vertical: size.height*0.02),
             backgroundColor: Colors.green,
           ));
           setState(() => _isLoading = false);
@@ -343,7 +343,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           dismissDirection: DismissDirection.startToEnd,
           content: Expanded(child: Text(e.message.toString())),
-          padding: EdgeInsets.symmetric(horizontal: 600, vertical: 15),
+           padding: EdgeInsets.symmetric(horizontal: size.width*0.3, vertical: size.height*0.02),
           backgroundColor: Colors.red,
         ));
       }

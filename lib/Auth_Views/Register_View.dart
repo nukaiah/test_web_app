@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: _isLoading
                   ? Center(
                       child: SpinKitFadingCube(
-                        size: size.height * 0.2,
+                        size: size.height * 0.05,
                         color: btnColor,
                       ),
                     )
